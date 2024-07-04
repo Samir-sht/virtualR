@@ -21,7 +21,12 @@ const Navbar = () => {
           <ul className="hidden lg:flex ml-14 space-x-12">
             {navItems.map((item, index) => (
               <li key={index}>
-                <a href={item.href}>{item.label}</a>
+                <a
+                  href={item.href}
+                  className="hover:text-orange-400 transition-all transition-duration-500"
+                >
+                  {item.label}
+                </a>
               </li>
             ))}
           </ul>
@@ -41,11 +46,16 @@ const Navbar = () => {
           </div>
         </div>
         {mobileDrawerOpen && (
-          <div className="fixed right-0 z-20 bg-neutral-900 w-full p-12 flex flex-col justify-center items-center lg:hidden">
+          <div className="fixed right-0 z-20 bg-neutral-900 w-full p-4 flex flex-col justify-center items-center lg:hidden">
             <ul>
               {navItems.map((item, index) => (
                 <li key={index} className="py-4 ">
-                  <a href={item.href}>{item.label}</a>
+                  <a
+                    href={item.href}
+                    className="hover:text-orange-400 transition-all transition-duration-500"
+                  >
+                    {item.label}
+                  </a>
                 </li>
               ))}
             </ul>
